@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>car</title>
+		<link rel="stylesheet" href="index.css">
+		<style>
+        .red {
+            background-color: red;
+        }
+    </style>
+    <!--script> src=index.js</script>-->
+    <script>
+    /*function pressHandler(e) {
+        console.log(this.value);
+        if (parseInt(this.value) <= 4) {
+            this.className = "red";
+        } else {
+            this.className = "";
+        }
+    }
+
+    document.getElementById("user").addEventListener("keyup",pressHandler);*/
+   const passReg = /^(?=.*\d).{8,15}$/;
+  function validate() {
+  
+  var pass = document.forms["signup_form"]["passwd"].value;
+  var pass1 = document.forms["signup_form"]["passwd1"].value;
+  var x = document.forms["signup_form"]["user_name"].value;
+  if (x.length<8) {
+    document.forms["signup_form"]["user_name"];
+    alert("Username should be min 8 letters");
+    return false;}
+  if ( pass!=pass1 ) {
+    document.forms["signup_form"]["passwd"];
+    alert("password not matched");
+    
+    return false;
+    }
+  }
+    </script>
+		
+	</head>
+	<body>
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="wrapper fadeInDown">
+		<div class="login-wrap">
+<form action="validate.jsp" name=login_form method="POST">
+   	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked ><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="userlogin" type="text" class="input" name="usernamelogin" required>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="passlogin" type="password" class="input" data-type="password" name="passwordlogin" required>
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" unchecked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+			</form>
+<form action="register.jsp" name=signup_form onsubmit="return validate()" method="POST">
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input" name=user_name required>
+				</div>
+				<div class="group">
+					<label for="user" class="label">Full Name</label>
+					<input id="user" type="text" class="input" name=full_name required>
+				</div>
+				
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name=passwd required>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name=passwd1 required>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input" name=email required>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">Already Member?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</form>
+</div>
+</div>
+	</body>
+</html>
